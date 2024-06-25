@@ -1,11 +1,11 @@
 
 t
-java:S1068",Remove this unused "location" private field.(Ìöïžüÿÿÿÿ8ú€´¼„2J$95a79061-770b-44c0-84ed-22f2a4fc8453
+java:S1068",Remove this unused "location" private field.(Ìöïžüÿÿÿÿ8Õ¿Éæ„2J$26a4d9ae-a807-4648-b06e-e52744a06eae
 u
-java:S1068"-Remove this unused "startTime" private field.(ÃŽ«Žùÿÿÿÿ8ú€´¼„2J$e6b0fe88-40e8-48aa-a7d9-93621d6e320e
-n
-java:S1068"+Remove this unused "endTime" private field.(±ý’Ø8ú€´¼„2J$b71ffd1c-c12c-4698-b7e0-4d9f2d31d73d
+java:S1068"-Remove this unused "startTime" private field.(öÆÖ¤ûÿÿÿÿ8Õ¿Éæ„2J$e2f7ba1d-9333-49fa-897f-1b45efcaa4c2
+s
+java:S1068"+Remove this unused "endTime" private field.(º©çÑþÿÿÿÿ8Õ¿Éæ„2J$42e5c7cb-b1d9-4394-9a65-b02072d14c92
 u
-java:S1068"-Remove this unused "totalTime" private field.(º”…“ýÿÿÿÿ8û€´¼„2J$07b4475e-229a-40b4-8118-e85f5980bb0f
+java:S1068"-Remove this unused "totalTime" private field.(¿›Ñ€þÿÿÿÿ8Ö¿Éæ„2J$705cbc8c-13c8-4ae8-8aea-5f07fd9f9883
 r
-java:S1068"*Remove this unused "status" private field.(¦­œ˜ÿÿÿÿÿ8û€´¼„2J$556cf8b3-dca6-4b45-ba4b-cbda988a9cb4
+java:S1068"*Remove this unused "status" private field.(¦­œ˜ÿÿÿÿÿ8Ö¿Éæ„2J$a6f043c0-907c-4923-ab88-b31b99e1a1a7
