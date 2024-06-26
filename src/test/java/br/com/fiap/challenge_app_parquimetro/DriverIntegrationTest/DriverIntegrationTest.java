@@ -9,7 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -27,9 +26,11 @@ public class DriverIntegrationTest {
 
     @Test
     public void testCreateDriver() throws Exception {
+        String uniqueEmail = "ola" + System.currentTimeMillis() + "@gmail.com";
+
         DriverDto driverDto = new DriverDto();
         driverDto.setName("Teste 3");
-        driverDto.setEmail("oladdd@Gmail.com");
+        driverDto.setEmail(uniqueEmail);
         driverDto.setPhone("teste 1");
         driverDto.setAddress("ALfredo ");
 
