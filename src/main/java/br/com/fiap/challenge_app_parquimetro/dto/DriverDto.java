@@ -1,15 +1,25 @@
 package br.com.fiap.challenge_app_parquimetro.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public record DriverDto(
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class DriverDto {
 
-        String id,
+    private String id;
 
-        String name,
+    private String name;
 
-        String email,
+    private String email;
 
-        String phone,
+    private String phone;
 
-        String address) {
+    private String address;
+
+    public String getEmail() {
+        return this.email;
+    }
 }

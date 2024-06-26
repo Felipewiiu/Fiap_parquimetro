@@ -1,21 +1,27 @@
 package br.com.fiap.challenge_app_parquimetro.dto;
 
 import br.com.fiap.challenge_app_parquimetro.usecases.ParkingPeriodType;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-public record ParkingSessionDto(
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class ParkingSessionDto {
 
-        String id,
+    private String id;
 
-        String location,
+    private String location;
 
-        LocalDateTime startTime,
+    private LocalDateTime startTime;
 
-        LocalDateTime endTime,
+    private LocalDateTime endTime;
 
-        String status,
+    private String status;
 
-        ParkingPeriodType parkingPeriod
-) {
+    private ParkingPeriodType parkingPeriod;
 }
+

@@ -22,8 +22,6 @@ public class DriverController {
     public ResponseEntity<DriverDto> createDriver(@RequestBody DriverDto driver) {
         DriverDto createDriver = driverService.createDriver(driver);
         return new ResponseEntity<>(createDriver, HttpStatus.CREATED);
-
     }
-
 
 }
