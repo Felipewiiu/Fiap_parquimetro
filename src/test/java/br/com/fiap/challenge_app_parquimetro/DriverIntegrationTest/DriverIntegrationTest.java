@@ -11,8 +11,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -26,7 +25,7 @@ public class DriverIntegrationTest {
 
     @Test
     public void testCreateDriver() throws Exception {
-        String uniqueEmail = "ola" + System.currentTimeMillis() + "@gmail.com";
+        String uniqueEmail = "felipe" + System.currentTimeMillis() + "@email.com";
 
         DriverDto driverDto = new DriverDto();
         driverDto.setName("Teste 3");
@@ -44,4 +43,27 @@ public class DriverIntegrationTest {
                 .andExpect(jsonPath("$.address", is(driverDto.getAddress())));
     }
 
+    @Test
+    public void testShouldNotCreateDriverWithDuplicateEmail() throws Exception {
+        String duplicateEmail = "duplicate" + System.currentTimeMillis() + "@email.com";
+
+        DriverDto driverDto = new DriverDto();
+        driverDto.setName("Teste 4");
+        driverDto.setEmail(duplicateEmail);
+        driverDto.setPhone("teste 2");
+        driverDto.setAddress("ALfredo 2");
+
+        // Primeira solicitação POST deve ser bem-sucedida
+        mockMvc.perform(post("/driver")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(driverDto)))
+                .andExpect(status().isCreated());
+
+        // Segunda solicitação POST com o mesmo e-mail deve resultar em conflito
+        mockMvc.perform(post("/driver")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(driverDto)))
+                .andExpect(status().isConflict())
+                .andExpect(content().string("Email already exists: " + duplicateEmail));
+    }
 }
