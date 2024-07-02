@@ -1,13 +1,20 @@
 package br.com.fiap.challenge_app_parquimetro.dto;
 
-public record VehicleDto(
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-        String id,
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class VehicleDto {
 
-        String licensePlate,
+    private String id;
 
-        String model,
+    private String licensePlate;
 
-        String color
-) {
+    private String model;
+
+    private String color;
+
 }

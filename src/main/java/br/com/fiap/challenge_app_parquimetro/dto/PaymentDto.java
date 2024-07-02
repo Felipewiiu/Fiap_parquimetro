@@ -1,18 +1,24 @@
 package br.com.fiap.challenge_app_parquimetro.dto;
 
 import br.com.fiap.challenge_app_parquimetro.usecases.PaymentMethod;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public record PaymentDto(
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class PaymentDto {
 
-        String id,
+    private String id;
 
-        BigDecimal amount,
+    private BigDecimal amount;
 
-        LocalDateTime paymentTime,
+    private LocalDateTime paymentTime;
 
-        PaymentMethod paymentMethod
-) {
+    private PaymentMethod paymentMethod;
+
 }
